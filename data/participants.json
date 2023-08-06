@@ -1,0 +1,29 @@
+[
+    {
+        "name": "ippo makunouchi",
+        "stats": {
+            "strength": 10,
+            "intelligence": 10,
+            "dexterity": 10,
+            "constitution": 10
+        }
+    },
+    {
+        "name": "miyata ichiro",
+        "stats": {
+            "strength": 10,
+            "intelligence": 10,
+            "dexterity": 10,
+            "constitution": 10
+        }
+    },
+    {
+        "name": "takamura mamoru",
+        "stats": {
+            "strength": 10,
+            "intelligence": 10,
+            "dexterity": 10,
+            "constitution": 10
+        }
+    }
+]
