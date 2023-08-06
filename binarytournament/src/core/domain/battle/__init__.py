@@ -7,6 +7,7 @@ import random
 
 logger = Logger(__name__)
 
+
 class Battle(BaseEntity):
     def __init__(
         self,

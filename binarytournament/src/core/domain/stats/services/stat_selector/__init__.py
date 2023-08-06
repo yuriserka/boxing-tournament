@@ -15,14 +15,16 @@ class StatSelectorService:
         while True:
             idx = self.get_input()
             while idx < 0 or idx >= len(stats_items):
-                logger.info(f"Invalid selection. Please select a number between 0 and {len(stats_items) - 1}")
-                idx = self.get_input()    
+                logger.info(
+                    f"Invalid selection. Please select a number between 0 and {len(stats_items) - 1}"
+                )
+                idx = self.get_input()
 
             try:
                 self.player.select_stat(idx)
                 break
             except Exception as e:
                 logger.info(f"{e}. Please select a different stat.")
-    
+
     def get_input(self) -> int:
         return int(input("Select a stat: "))

@@ -12,10 +12,11 @@ class StatSelectorUi(Ui):
         self.stat_selector_service = StatSelectorService(player)
 
     def render(self) -> None:
-        logger.info(f"Select your stat to fight: ")
+        logger.info("Select your stat to fight: ")
         stats_items = self.player.stats.__dict__().items()
-            
+
         for idx, stat in enumerate(stats_items):
-            logger.info(f"{idx}: {stat[0]} -> {stat[1] if idx != self.player.last_selected_stat_index else '---'}")
+            stat_value = stat[1] if idx != self.player.last_selected_stat_index else '---'
+            logger.info(f"{idx}: {stat[0]} -> {stat_value}")
 
         self.stat_selector_service.execute()

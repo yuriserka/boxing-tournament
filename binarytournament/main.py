@@ -1,5 +1,7 @@
 from src.ui.participant_selector import ParticipantSelectorUi
-from src.core.domain.tournament.services.tournament_parser.csv_parser import CsvParser
+from src.core.domain.tournament.services.tournament_parser.csv_parser import (
+    CsvParser
+)
 from src.core.utils.logger import Logger
 
 logger = Logger(__name__)

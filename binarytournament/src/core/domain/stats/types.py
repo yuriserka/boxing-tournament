@@ -6,4 +6,3 @@ class StatsTypes(Enum):
     INTELLIGENCE = "intelligence"
     DEXTERITY = "dexterity"
     CONSTITUTION = "constitution"
-

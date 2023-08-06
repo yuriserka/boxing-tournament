@@ -13,7 +13,9 @@ class ParticipantSelectorService:
         total_participants = len(self.tournament.participants)
         idx = self._get_input()
         while idx < 0 or idx >= total_participants:
-            logger.info(f"Invalid selection. Please select a number between 0 and {total_participants - 1}")
+            logger.info(
+                f"Invalid selection. Please select a number between 0 and {total_participants - 1}"
+            )
             idx = self._get_input()
 
         self.tournament.select_player_participant(idx)

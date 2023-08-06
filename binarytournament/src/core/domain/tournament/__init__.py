@@ -40,7 +40,7 @@ class Tournament(BaseEntity):
         def _battle(node: TreeNode):
             if node.is_leaf:
                 return
-            
+
             battle_args = [*node.children_values]
             if self.player in node.children_values:
                 StatSelectorUi(self.player).render()

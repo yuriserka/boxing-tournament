@@ -4,6 +4,7 @@ from src.core.domain.participant import Participant
 
 logger = Logger(__name__)
 
+
 class Player(Participant):
     def __init__(self, participant: Participant):
         super().__init__(participant.name, participant.stats)
@@ -14,7 +15,6 @@ class Player(Participant):
             raise Exception("You can't select the same stat twice in a row")
 
         self.last_selected_stat_index = idx
-        
 
     def get_fight_attribute(self) -> StatsTypes:
         return list(StatsTypes)[self.last_selected_stat_index]
