@@ -22,7 +22,7 @@ class Tournament(BaseEntity):
         participants: List[Participant],
     ):
         self.participants: List[Participant] = Shuffler.shuffle(participants)
-        self.tournament = BinaryTree.of_height(
+        self.tournament_tree = BinaryTree.of_height(
             math.ceil(math.log2(len(self.participants)))
         )
         self.match_history = []
@@ -34,9 +34,9 @@ class Tournament(BaseEntity):
 
     def build_matchups(self):
         shuffled_participants = Shuffler.shuffle(self.participants)
-        self.tournament.fill_leaves(shuffled_participants)
+        self.tournament_tree.fill_leaves(shuffled_participants)
 
-    def battle(self):
+    def start(self):
         def _battle(node: TreeNode):
             if node.is_leaf:
                 return
@@ -52,11 +52,11 @@ class Tournament(BaseEntity):
 
             node.reset_with(winner)
 
-        self.tournament.traverse(_battle)
+        self.tournament_tree.traverse(_battle)
 
     def __dict__(self):
         return {
             "participants": [p.__dict__() for p in self.participants],
-            "tournament": self.tournament.__dict__(),
+            "tournament": self.tournament_tree.__dict__(),
             "match_history": self.match_history
         }

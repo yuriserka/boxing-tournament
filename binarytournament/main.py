@@ -14,7 +14,7 @@ def main():
     ParticipantSelectorUi(tournament).render()
 
     tournament.build_matchups()
-    tournament.battle()
+    tournament.start()
 
     logger.info(f"Tournament: {tournament}")
 
